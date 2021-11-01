@@ -1,3 +1,10 @@
+$(function(){
+    let messengerIcon = document.querySelector('.messengers_icon')
+    setInterval(() => {
+        messengerIcon.classList.toggle('messenger_active')
+    }, 2500)
+});
+
 AOS.init({disable: 'mobile'});
 function show_answer() {
     if (event.target.classList.contains('risk_header')){
@@ -24,12 +31,44 @@ function show_answer() {
     }
 }
 
+
 var swiper = new Swiper(".swiper", {
     loop: true,
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
     },
+});
+
+var swiper3 = new Swiper(".swiper3", {
+    loop: true,
+    effect: "",
+    navigation: {
+        nextEl: ".swiper-button-next3",
+        prevEl: ".swiper-button-prev3",
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+        },
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        960: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+        },
+    }
 });
 
 var swiper2 = new Swiper(".swiper2", {
