@@ -224,6 +224,7 @@ function calc(large=false, max=false) {
     let e22 = 0.7
     
     let c22 = b22 * d16
+    let tarifTitle = document.querySelector('.calc_info_title')
     if (a22 < 100000){
         c22 = b22 * d16
     }else if (a22 >= 100000 && a22 < 500000){
@@ -254,6 +255,7 @@ function calc(large=false, max=false) {
     else{
         ths.innerText = b22
         if (a22 < 50000 && k22 > 100){
+            tarifTitle.innerHTML = 'Starter'
             document.querySelector('.payback_val').innerText = Math.round(f22) + ' месяцев'
             document.querySelector('.roi_val').innerText = Math.round(k22) + "%"
             document.querySelector('.np_val').innerText =  new Intl.NumberFormat('ru-RU').format(Math.round(j22))
@@ -262,6 +264,7 @@ function calc(large=false, max=false) {
             document.querySelector('.year_val').innerText = Math.round(k22/ 3)  + "%"
             document.querySelector('.clean_m_val').innerText = Math.round(f22) *2 + ' месяцев'
         }else if (a22 >= 50000 && a22 < 100000 && k22 > 150){
+            tarifTitle.innerHTML = 'Medium'
             document.querySelector('.payback_val').innerText = Math.round(f22) + ' месяцев'
             document.querySelector('.roi_val').innerText = Math.round(k22) + "%"
             document.querySelector('.np_val').innerText =  new Intl.NumberFormat('ru-RU').format(Math.round(j22))
@@ -270,6 +273,7 @@ function calc(large=false, max=false) {
             document.querySelector('.year_val').innerText = Math.round(k22/ 3)  + "%"
             document.querySelector('.clean_m_val').innerText = Math.round(f22) *2 + ' месяцев'
         }else{
+            tarifTitle.innerHTML = 'Large'
             document.querySelector('.payback_val').innerText = Math.round(f22) + ' месяцев'
             document.querySelector('.roi_val').innerText = Math.round(k22) + "%"
             document.querySelector('.np_val').innerText = new Intl.NumberFormat('ru-RU').format(Math.round(j22))
